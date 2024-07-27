@@ -1,11 +1,14 @@
+<!-- ARTICLE DE BLOG -->
+
 <?php
+// récupération de l’en-tête et du menu
 get_header();
 
-/* Start the Loop */
+// Itération au travers de tous les posts
 while ( have_posts() ) :
 	the_post();
 
-	get_template_part( 'template-parts/content/content-single' );
+	get_template_part( 'content-single' );
 
 	if ( is_attachment() ) {
 		// Parent post navigation.
