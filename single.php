@@ -1,43 +1,33 @@
 <!-- ARTICLE DE BLOG -->
-
 <?php
-// récupération de l’en-tête et du menu
-get_header();
+// Récupération de l’en-tête et du menu
+get_header(); ?>
 
-// Itération au travers de tous les posts
-while ( have_posts() ) :
-	the_post();
+<!-- Zone principale de contenu -->
+<div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
 
-	get_template_part( 'content-single' );
+    <?php
+	// Itération au travers de tous les posts
+    while ( have_posts() ) :
+        the_post();
 
-	if ( is_attachment() ) {
-		// Parent post navigation.
-		the_post_navigation(
-			array(
-				/* translators: %s: Parent post link. */
-				'prev_text' => sprintf( __( '<span class="meta-nav">Published in</span><span class="post-title">%s</span>', 'twentytwentyone' ), '%title' ),
-			)
-		);
-	}
+		// Intégration du contenu de l'article basé sur son format
+        get_template_part( 'content', get_post_format() );
 
-	// If comments are open or there is at least one comment, load up the comment template.
-	if ( comments_open() || get_comments_number() ) {
-		comments_template();
-	}
+		// Affichage de la navigation pour les articles précédents/suivants
+        the_post_navigation();
 
-	// Previous/next post navigation.
-	$twentytwentyone_next = is_rtl() ? twenty_twenty_one_get_icon_svg( 'ui', 'arrow_left' ) : twenty_twenty_one_get_icon_svg( 'ui', 'arrow_right' );
-	$twentytwentyone_prev = is_rtl() ? twenty_twenty_one_get_icon_svg( 'ui', 'arrow_right' ) : twenty_twenty_one_get_icon_svg( 'ui', 'arrow_left' );
+        // Si les commentaires sont ouverts ou s'il y a au moins un commentaire, chargez le template de commentaires
+        if ( comments_open() || get_comments_number() ) :
+            comments_template();
+        endif;
 
-	$twentytwentyone_next_label     = esc_html__( 'Next post', 'twentytwentyone' );
-	$twentytwentyone_previous_label = esc_html__( 'Previous post', 'twentytwentyone' );
+    endwhile; // Fin de la boucle
+    ?>
 
-	the_post_navigation(
-		array(
-			'next_text' => '<p class="meta-nav">' . $twentytwentyone_next_label . $twentytwentyone_next . '</p><p class="post-title">%title</p>',
-			'prev_text' => '<p class="meta-nav">' . $twentytwentyone_prev . $twentytwentyone_previous_label . '</p><p class="post-title">%title</p>',
-		)
-	);
-endwhile; // End of the loop.
+    </main><!-- #main -->
+</div><!-- #primary -->
 
-get_footer();
+<!-- Intégration du footer du site -->
+<?php get_footer(); ?>
