@@ -9,11 +9,7 @@ while ( have_posts() ) :
 	// Intégration du contenu de la page basé sur son format
 	get_template_part( 'content-page' );
 
-	// Si les commentaires sont ouverts ou s'il y a au moins un commentaire, chargez le template de commentaires
-	if ( comments_open() || get_comments_number() ) {
-		comments_template();
-	}
 endwhile; // Fin de la boucle
 
-// Intégration du footer du site
+// Intégration du Footer du site
 get_footer();

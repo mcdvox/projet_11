@@ -1,33 +1,21 @@
 <!-- ARTICLE DE BLOG -->
+<!-- Intégration du Header du site -->
+<?php get_header(); ?>
+
 <?php
-// Récupération de l’en-tête et du menu
-get_header(); ?>
-
-<!-- Zone principale de contenu -->
-<div id="primary" class="content-area">
-    <main id="main" class="site-main" role="main">
-
-    <?php
-	// Itération au travers de tous les posts
-    while ( have_posts() ) :
-        the_post();
-
-		// Intégration du contenu de l'article basé sur son format
-        get_template_part( 'content', get_post_format() );
-
-		// Affichage de la navigation pour les articles précédents/suivants
-        the_post_navigation();
-
-        // Si les commentaires sont ouverts ou s'il y a au moins un commentaire, chargez le template de commentaires
-        if ( comments_open() || get_comments_number() ) :
-            comments_template();
-        endif;
-
-    endwhile; // Fin de la boucle
+// Vérification de la liste des articles à afficher
+while ( have_posts() ) :
+    // Configuration des données du post actuel
+    the_post();
     ?>
-
-    </main><!-- #main -->
-</div><!-- #primary -->
+    <!-- Affichage du Titre de l'Article -->
+    <h1><?php the_title(); ?></h1>
+    <!-- Affichage du Contenu de l'Article -->
+    <div><?php the_content(); ?></div>
+<?php
+// Fin de la Boucle
+endwhile;
+?>
 
 <!-- Intégration du footer du site -->
 <?php get_footer(); ?>
