@@ -11,7 +11,9 @@
         ) );
         ?>
     </nav><!-- .footer-menu -->
-    
+    <?php
+    get_template_part("/templates_part/modale")
+    ?>
 </footer><!-- #colophon -->
     
     <?php wp_footer(); ?>

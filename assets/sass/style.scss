@@ -1,8 +1,14 @@
 // Import des polices Google fonts
 @import "./fonts";
 
-// Import du Header
+// Import du style des couleurs du thème
+@import "./colors";
+
+// Import du style du Header
 @import "./header";
 
-// Import du footer
+// Import du style du footer
 @import "./footer";
+
+// Import du style de la modale
+@import "./modale";
