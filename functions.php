@@ -8,8 +8,8 @@ add_theme_support( 'title-tag' );
 
 // Décharger les polices Google Fonts
 function remove_google_fonts() {
-    wp_dequeue_style( 'poppins-font' );
-    wp_dequeue_style( 'spacemono-font' );
+    wp_dequeue_style( 'Poppins' );
+    wp_dequeue_style( 'SpaceMono' );
 }
 
 add_action('remove_google_fonts', 999);
@@ -31,7 +31,7 @@ function theme_setup() {
     ) );
 }
 
-add_action( 'after_setup_theme', 'theme_setup' );
+add_action( 'init', 'theme_setup' );
 
 // Chargement des scripts personnalisés
 wp_enqueue_script( 'jquery' );

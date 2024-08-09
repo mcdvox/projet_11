@@ -1,3 +1,16 @@
+:root {
+  --rouge: #E00000;
+  --rouge-secondaire: #FE5858;
+  --rouge-tertiaire: #FFD6D6;
+  --noir: #000000;
+  --gris-fonce: #C4C4C4;
+  --gris-medium: #D8D8D8;
+  --gris-light: #E5E5E5;
+  --bleu-fonce: #313144;
+  --blanc: #ffffff;
+  --alpha: 0.4;
+}
+
 @font-face {
   font-family: "Poppins";
   src: url("../fonts/Poppins-Bold.woff2") format("woff2");
@@ -68,19 +81,6 @@
   font-style: normal;
   font-weight: 400;
 }
-:root {
-  --rouge: #E00000;
-  --rouge-secondaire: #FE5858;
-  --rouge-tertiaire: #FFD6D6;
-  --noir: #000000;
-  --gris-fonce: #C4C4C4;
-  --gris-medium: #D8D8D8;
-  --gris-light: #E5E5E5;
-  --bleu-fonce: #313144;
-  --blanc: #ffffff;
-  --alpha: 0.4;
-}
-
 header {
   display: flex;
   justify-content: space-between;
@@ -195,4 +195,90 @@ footer {
 }
 .cf7-container input[type=submit]:hover {
   background-color: #ababab;
+}
+
+/* menu-burger */
+.menu_burger, .nav_burger {
+  display: none;
+}
+
+@media screen and (max-width: 864px) {
+  .menu_burger {
+    display: block;
+    position: relative;
+    width: 45px;
+    height: 45px;
+    right: 15px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+  }
+  .menu_burger .line,
+  .menu_burger .line::before,
+  .menu_burger .line::after {
+    display: block;
+    position: absolute;
+    width: 27px;
+    height: 2px;
+    border-radius: 3px;
+    left: 0;
+    background: var(--noir);
+    transition: all 0.5s ease-in-out;
+    content: "";
+  }
+  .menu_burger .line {
+    position: relative;
+  }
+  .menu_burger .line::before {
+    transform: translateY(-12px);
+  }
+  .menu_burger .line::after {
+    transform: translateY(12px);
+  }
+  .menu_burger.open .line,
+  .show-nav .line {
+    width: 0;
+    background: transparent;
+  }
+  .menu_burger.open .line::before,
+  .show-nav .line::before {
+    transform: rotate(45deg);
+  }
+  .menu_burger.open .line::after,
+  .show-nav .line::after {
+    transform: rotate(-45deg);
+  }
+  .show-nav .menu-burger {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    background: var(--rouge);
+    line-height: 100px;
+    z-index: 1;
+    gap: 18px;
+  }
+  .show-nav .menu-burger a {
+    list-style: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "SpaceMono";
+    font-size: 44px;
+    font-weight: 400;
+    margin-top: 47px;
+    text-decoration: none;
+    color: var(--blanc);
+  }
+  .menu-header-container {
+    display: none;
+  }
+}
+.site-navigation a:hover {
+  font-weight: bold;
 }/*# sourceMappingURL=style.css.map */

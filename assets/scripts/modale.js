@@ -1,21 +1,21 @@
-// Sélectionner la modale et le bouton de menu
+// Sélection de la modale sur le lien contact 
 var modal = document.getElementById("contact-modal");
 var menuItem = document.getElementById("menu-item-48");
 
-// Fonction pour ouvrir la modale
+// Fonction d'ouverture la modale
 function openModal() {
     modal.style.display = "block";
 }
 
-// Fonction pour fermer la modale si le clic est en dehors de celle-ci
+// Fonction de fermeture de la modale lors d'un clic externe
 function closeModal(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
 }
 
-// Ajouter un événement de clic pour ouvrir la modale
+// Ajout d'un événement de clic pour l'ouverture de la modale
 menuItem.addEventListener("click", openModal);
 
-// Ajouter un événement de clic à la fenêtre pour fermer la modale
+// Ajout d'un événement de clic à la fenêtre pour la fermeture de la modale
 window.addEventListener("click", closeModal);
