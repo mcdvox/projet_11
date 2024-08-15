@@ -40,10 +40,10 @@
 		</button> 
 		<div id="nav-burger" class="nav_burger">
 			<?php wp_nav_menu( array(
-				'theme_location' => 'primary',
-				'menu_id' => 'primary-menu-burger',
+				'theme_location' => 'burger',
+				'menu_id' => 'tertiary-menu',
 				'container' => false,
-				'menu_class' => 'menu-burger',
+				'menu_class' => 'nav-burger',
 			)); ?>
 		</div>
 	</nav>

@@ -1,25 +1,25 @@
-/* menu-burger */
-// Masquer le Burger en Desktop
+/* Cacher le menu burger et le menu burger par défaut */
 .menu_burger, .nav_burger {
     display: none;
 }
 
-// Media Queries
+/* Styles pour les écrans inférieurs à 864px */
 @media screen and (max-width: 864px) {
-    // Apparition du Burger sur les appareils mobiles
+    /* Afficher le bouton burger sur mobile */
     .menu_burger {
         display: block;
         position: relative;
         width: 45px;
         height: 45px;
-        right: 15px;
+        left:75px;
         border: none;
         background: transparent;
         cursor: pointer;
         padding: 0;
+        z-index: 10;
     }
-    
-    //  Création du Burger
+
+    /* Créer les lignes du burger */
     .menu_burger .line,
     .menu_burger .line::before,
     .menu_burger .line::after {
@@ -28,7 +28,6 @@
         width: 27px;
         height: 2px;
         border-radius: 3px;
-        left: 0;
         background: var(--noir);
         transition: all 0.5s ease-in-out;
         content: "";
@@ -39,47 +38,51 @@
     }
 
     .menu_burger .line::before {
-        transform: translateY(-12px);
+        transform: translateY(-8px);
     }
 
     .menu_burger .line::after {
-        transform: translateY(12px);
+        transform: translateY(8px);
     }
-    
-    .menu_burger.open .line,
-    .show-nav .line {
-        width: 0;
+
+    /* Modifier l'animation lors de l'ouverture du burger */
+    .menu_burger.open .line {
         background: transparent;
     }
 
-    .menu_burger.open .line::before,
-    .show-nav .line::before {
+    .menu_burger.open .line::before {
         transform: rotate(45deg);
     }
-    
-    .menu_burger.open .line::after,
-    .show-nav .line::after {
+
+    .menu_burger.open .line::after {
         transform: rotate(-45deg);
     }
 
-    // Position du menu
-    .show-nav .menu-burger {
-        display: flex;
+    /* Style du menu burger ouvert */
+    .nav_burger {
+        display: none;
         position: fixed;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         list-style: none;
+        line-height: 100px;
+        gap: 18px;
+        top: 88px;
+        left: 0;
         width: 100%;
         height: 100%;
-        left: 0;
         background: var(--rouge);
-        line-height: 100px;
-        z-index: 1;
-        gap: 18px;
+        z-index: 9;
     }
 
-    .show-nav .menu-burger a {
+    .nav_burger.show {
+        display: flex;
+    }
+
+    /* Style des éléments du menu */
+    .nav_burger .nav-burger a {
+        text-align: center;     
         list-style: none;
         text-decoration: none;
         text-transform: uppercase;
@@ -91,13 +94,16 @@
         color: var(--blanc);
     }
 
-    // Masquer le menu principal sur les appareils mobiles
-    .menu-header-container {
+    .nav_burger ul {
+        text-align: center;
+        text-decoration: none;  
+        list-style: none;
+        margin-top: 75px;
+    }
+
+        /* Masquer le menu principal sur mobile */
+    .site-navigation .nav-menu {
         display: none;
     }
 }
 
-// Style pour les liens au survol
-.site-navigation a:hover {
-    font-weight: bold;
-}

@@ -28,6 +28,7 @@ function theme_setup() {
     register_nav_menus( array(
         'primary' => __( 'Primary Menu', 'motaphoto' ),
         'secondary' => __( 'Secondary Menu', 'motaphoto' ),
+        'burger' => __( 'Burger Menu', 'motaphoto' ),
     ) );
 }
 
