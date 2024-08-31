@@ -83,34 +83,33 @@
   font-weight: 400;
 }
 header {
-  display: flex;
-  justify-content: space-between;
   width: 100%;
   height: 80px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.03);
 }
 
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+}
+
 .site-logo {
   display: flex;
   align-items: center;
-  margin-left: 148px;
 }
 
 nav {
   display: flex;
   align-items: center;
-  margin-right: 148px;
 }
 
 .nav-menu {
   display: flex;
   gap: 40px;
 }
-
 .nav-menu li {
   list-style: none;
 }
-
 .nav-menu a {
   font-family: "SpaceMono", sans-serif;
   font-size: 16px;
@@ -123,22 +122,28 @@ nav {
 }
 
 footer {
-  display: flex;
-  justify-content: center;
   width: 100%;
   height: 40px;
   border-top: 1px solid var(--noir);
 }
 
+.footer-inner {
+  display: flex;
+  justify-content: center;
+}
+
 .contact-modal {
   display: none;
-  position: absolute;
+  position: fixed;
+  align-items: center; /* Centre verticalement */
+  justify-content: center; /* Centre horizontalement */
   z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
+  overflow: hidden; /* Bloque le scroll */
 }
 
 .contact-modal-content {
@@ -293,4 +298,166 @@ footer {
   .site-navigation .nav-menu {
     display: none;
   }
+}
+.infos {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 40px;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  font-family: "SpaceMono", sans-serif;
+  width: 50%;
+  border-bottom: 1px solid var(--noir);
+}
+.description > h2 {
+  font-size: 66px;
+  font-weight: 420;
+  font-style: italic;
+  text-transform: uppercase;
+  text-decoration: none;
+  width: 80%;
+  color: var(--noir);
+}
+.description > p {
+  font-size: 14px;
+  font-weight: 400;
+  font-style: italic;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.infos-photo {
+  width: 50%;
+}
+.infos-photo img {
+  height: auto;
+  max-width: 100%;
+}
+
+.contact {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  border-bottom: 1px solid var(--noir);
+  padding: 24.5px 0;
+}
+
+.photo-contact {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  font-family: "SpaceMono", sans-serif;
+}
+.photo-contact > p {
+  font-size: 14px;
+  font-weight: 400;
+  font-style: italic;
+  text-transform: uppercase;
+  text-decoration: none;
+  max-width: 80%;
+  width: 60%;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+.btn-contact {
+  width: 272px;
+  height: 50px;
+}
+
+.arrow {
+  display: flex;
+  justify-content: right;
+  text-decoration: none;
+  margin-top: 25px;
+  width: 65px;
+}
+.arrow-left, .arrow-right {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  z-index: 10;
+}
+.arrow-left:hover ~ .thumbnail-left, .arrow-right:hover ~ .thumbnail-right {
+  opacity: 1;
+}
+
+.thumbnail {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  width: 81px;
+  height: 71px;
+  overflow: hidden;
+  transition: opacity 0.3s ease;
+}
+.thumbnail > img {
+  margin-top: 15px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnail-left, .thumbnail-right {
+  width: 81px;
+  height: 71px;
+  position: absolute;
+  top: 4px;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.thumbnail-left > img, .thumbnail-right > img {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.others {
+  margin-top: 20px;
+}
+.others h3 {
+  font-family: "SpaceMono", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin: 60px 0 50px 0;
+}
+.others .related-photos-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+.others .related-photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%; /* Images sur 2 colonnes */
+  height: 495px; /* Hauteur fixe pour le conteneur */
+  overflow: hidden; /* Cache le dépassement du contenu */
+}
+.others .related-photo img {
+  width: 564px; /* Image s'adapte à la largeur du conteneur */
+  height: 495px; /* Hauteur s'ajuste automatiquement en fonction de la largeur */
+  object-fit: cover; /* Étire l'image pour remplir tout le conteneur en conservant les proportions */
+}
+
+.width-max {
+  width: 1148px;
+  margin: auto;
 }/*# sourceMappingURL=style.css.map */

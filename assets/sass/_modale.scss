@@ -1,13 +1,16 @@
 // Modale
 .contact-modal {
     display: none;
-    position: absolute;
+    position: fixed;
+    align-items: center; /* Centre verticalement */
+    justify-content: center; /* Centre horizontalement */
     z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
+    overflow: hidden; /* Bloque le scroll */
 }
 
 // Contenu de la modale

@@ -1,0 +1,169 @@
+// Conteneur de l'article
+.infos {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 40px;
+}
+
+// Description des articles
+.description {
+    display: flex;
+    flex-direction: column;
+    font-family: "SpaceMono", sans-serif;
+    width: 50%;
+    border-bottom: 1px solid var(--noir);
+    & > h2 {
+        font-size: 66px;
+        font-weight: 420;
+        font-style: italic;
+        text-transform: uppercase;
+        text-decoration: none;
+        width: 80%;
+        color: var(--noir);
+    }
+    & > p {
+        font-size: 14px;
+        font-weight: 400;
+        font-style: italic;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+}
+
+.infos-photo {
+    width: 50%;
+    img {
+        height: auto;
+        max-width: 100%;
+    }
+}
+
+// Partie contact
+.contact {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    border-bottom: 1px solid var(--noir);
+    padding: 24.5px 0;
+}
+
+.photo-contact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    font-family: "SpaceMono", sans-serif;
+    
+    & > p {
+        font-size: 14px;
+        font-weight: 400;
+        font-style: italic;
+        text-transform: uppercase;
+        text-decoration: none;
+        max-width: 80%;
+        width: 60%;
+        padding-right: 20px;
+        box-sizing: border-box;
+    }
+}
+
+.btn-contact {
+    width: 272px;
+    height: 50px;
+}
+
+// Flèches droite et gauche
+.arrow {
+    display: flex;
+    justify-content: right;
+    text-decoration: none;
+    margin-top: 25px;
+    width: 65px;
+    &-left, &-right {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        z-index: 10; 
+    } 
+    &-left:hover ~  .thumbnail-left,
+    &-right:hover ~ .thumbnail-right {
+        opacity: 1;
+    }
+}
+
+// miniatures
+.thumbnail {
+    display:flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    width: 81px;
+    height: 71px;
+    overflow: hidden;
+    transition: opacity 0.3s ease;
+    & > img {
+        margin-top: 15px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.thumbnail-left, .thumbnail-right {    
+    width: 81px;
+    height: 71px;
+    position: absolute;
+    top: 4px;
+    right: 0;
+    display:flex;
+    align-items: center;
+    justify-content: center;   
+    margin-bottom: 25px;    
+    overflow: hidden;
+    opacity: 0; 
+    transition: opacity 0.3s ease;  
+    & > img {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+// Vous aimerez aussi
+.others {
+    margin-top: 20px;
+
+    h3 {
+        font-family: "SpaceMono", sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        font-style: normal;
+        text-transform: uppercase;
+        text-decoration: none;
+        margin: 60px 0 50px 0;
+    }
+
+    .related-photos-container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 60px;
+    }
+
+    .related-photo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%; /* Images sur 2 colonnes */
+        height: 495px; /* Hauteur fixe pour le conteneur */
+        overflow: hidden; /* Cache le dépassement du contenu */
+
+        img {
+            width: 564px; /* Image s'adapte à la largeur du conteneur */
+            height: 495px; /* Hauteur s'ajuste automatiquement en fonction de la largeur */
+            object-fit: cover; /* Étire l'image pour remplir tout le conteneur en conservant les proportions */
+        }
+    }
+}
