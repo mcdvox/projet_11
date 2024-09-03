@@ -167,3 +167,15 @@
         }
     }
 }
+
+/* Styles pour les écrans inférieurs à 864px */
+@media screen and (max-width: 864px) {
+    .related-photos-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .others .related-photo {
+        width: 100%;
+    }
+}

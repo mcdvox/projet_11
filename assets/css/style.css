@@ -133,10 +133,7 @@ footer {
 }
 
 .contact-modal {
-  display: none;
   position: fixed;
-  align-items: center; /* Centre verticalement */
-  justify-content: center; /* Centre horizontalement */
   z-index: 1000;
   left: 0;
   top: 0;
@@ -148,7 +145,7 @@ footer {
 
 .contact-modal-content {
   background-color: var(--blanc);
-  margin: 5% auto;
+  margin: 15% auto;
   border: 4px solid var(--noir);
   max-width: 500px;
   font-family: "Poppins", sans-serif;
@@ -203,6 +200,13 @@ footer {
   background-color: #ababab;
 }
 
+/* Styles pour les écrans inférieurs à 864px */
+@media screen and (max-width: 864px) {
+  .contact-modal-content {
+    background-color: var(--blanc);
+    margin: 35% auto;
+  }
+}
 /* Cacher le menu burger et le menu burger par défaut */
 .menu_burger, .nav_burger {
   display: none;
@@ -455,6 +459,44 @@ footer {
   width: 564px; /* Image s'adapte à la largeur du conteneur */
   height: 495px; /* Hauteur s'ajuste automatiquement en fonction de la largeur */
   object-fit: cover; /* Étire l'image pour remplir tout le conteneur en conservant les proportions */
+}
+
+/* Styles pour les écrans inférieurs à 864px */
+@media screen and (max-width: 864px) {
+  .related-photos-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .others .related-photo {
+    width: 100%;
+  }
+}
+.hero h1 {
+  display: flex;
+  position: absolute;
+  font-family: "SpaceMono", sans-serif;
+  font-size: 96px;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--blanc);
+  -webkit-text-stroke-width: 2px;
+  z-index: 10;
+}
+
+.hero-banner {
+  display: flex; /* Utilisation de flexbox pour centrer le contenu */
+  position: relative; /* Position relative pour contenir l'image */
+  justify-content: center; /* Centre le contenu horizontalement */
+  align-items: center; /* Centre le contenu verticalement */
+  width: 100%; /* Largeur de la bannière à 100% */
+  overflow: hidden; /* Assure qu'il n'y ait pas de débordement */
+}
+
+.full-width {
+  display: block; /* Supprime les espaces blancs autour de l'image */
+  width: 100%; /* L'image prend toute la largeur de son conteneur */
+  height: auto; /* Garde le ratio d'aspect de l'image */
+  max-width: 100%; /* Assure que l'image ne dépasse pas la largeur de son conteneur */
 }
 
 .width-max {

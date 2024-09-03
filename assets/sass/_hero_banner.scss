@@ -1,0 +1,27 @@
+.hero h1 {
+        display: flex;
+        position: absolute;
+        font-family: "SpaceMono", sans-serif;
+        font-size: 96px;
+        text-transform: uppercase;
+        color: transparent;
+        -webkit-text-stroke: 1px var(--blanc);
+        -webkit-text-stroke-width: 2px;
+        z-index: 10;
+}
+
+.hero-banner {
+    display: flex; /* Utilisation de flexbox pour centrer le contenu */
+    position: relative; /* Position relative pour contenir l'image */
+    justify-content: center; /* Centre le contenu horizontalement */
+    align-items: center; /* Centre le contenu verticalement */
+    width: 100%; /* Largeur de la bannière à 100% */
+    overflow: hidden; /* Assure qu'il n'y ait pas de débordement */
+}
+
+.full-width {
+    display: block; /* Supprime les espaces blancs autour de l'image */
+    width: 100%; /* L'image prend toute la largeur de son conteneur */
+    height: auto; /* Garde le ratio d'aspect de l'image */
+    max-width: 100%; /* Assure que l'image ne dépasse pas la largeur de son conteneur */
+}

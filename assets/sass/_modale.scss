@@ -1,9 +1,9 @@
 // Modale
 .contact-modal {
-    display: none;
+    // display: none;
     position: fixed;
-    align-items: center; /* Centre verticalement */
-    justify-content: center; /* Centre horizontalement */
+    // align-items: center; /* Centre verticalement */
+    // justify-content: center; /* Centre horizontalement */
     z-index: 1000;
     left: 0;
     top: 0;
@@ -16,7 +16,7 @@
 // Contenu de la modale
 .contact-modal-content {
     background-color: var(--blanc);
-    margin: 5% auto;
+    margin: 15% auto;
     border: 4px solid var(--noir);
     max-width: 500px;
     font-family: "Poppins", sans-serif;
@@ -76,5 +76,13 @@
         &:hover {
             background-color: darken(#C4C4C4, 10%);
         }
+    }
+}
+
+/* Styles pour les écrans inférieurs à 864px */
+@media screen and (max-width: 864px) {
+    .contact-modal-content {
+        background-color: var(--blanc);
+        margin: 35% auto;
     }
 }
