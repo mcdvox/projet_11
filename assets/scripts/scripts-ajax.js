@@ -43,6 +43,7 @@ jQuery(document).ready(function($) {
                 button.text('Chargement...'); // Afficher un message de chargement
             },
             success: function(response) {
+                console.log(response); // Pour vérifier la réponse dans la console
                 if (response) {
                     $('.photos-grid').append(response); // Ajouter les nouvelles photos
                     button.data('page', page + 1); // Incrémenter le numéro de page
@@ -91,10 +92,11 @@ jQuery(document).ready(function($) {
                 $('#photo-btn').text('Chargement...'); // Afficher un message de chargement
             },
             success: function(response) {
+                console.log(response); // Pour vérifier la réponse dans la console
                 if (response) {
-                    $('.photos-grid').append(response); // Ajouter les nouvelles photos filtrées
-                    $('#photo-btn').data('page', page + 1); // Incrémenter le numéro de page
-                    $('#photo-btn').text('Charger plus');
+                    $('.photos-grid').append(response); // Ajouter les nouvelles photos
+                    button.data('page', page + 1); // Incrémenter le numéro de page
+                    button.text('Charger plus');
                 } else {
                     $('#photo-btn').text('Aucune autre photo à afficher').prop('disabled', true);
                 }
