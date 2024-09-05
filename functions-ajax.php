@@ -16,14 +16,46 @@ function load_more_photos() {
         $loaded_photos[] = $_SESSION['banner_post_id'];
     }
 
-    // Requête pour récupérer 8 autres articles de type 'photo' en excluant ceux déjà affichés
+    // Filtrer par catégorie et format (le cas échéant)
+    $category = isset($_POST['category']) ? sanitize_text_field($_POST['category']) : '';
+    $format = isset($_POST['format']) ? sanitize_text_field($_POST['format']) : '';
+
+    // Trier par date (ASC ou DESC)
+    $order = isset($_POST['order']) ? sanitize_text_field($_POST['order']) : 'DESC';
+
+    // Construire la requête taxonomique pour les filtres
+    $tax_query = array('relation' => 'AND');
+
+    if (!empty($category)) {
+        $tax_query[] = array(
+            'taxonomy' => 'categorie',
+            'field'    => 'slug',
+            'terms'    => $category,
+        );
+    }
+
+    if (!empty($format)) {
+        $tax_query[] = array(
+            'taxonomy' => 'format',
+            'field'    => 'slug',
+            'terms'    => $format,
+        );
+    }
+
+    // Arguments pour récupérer les photos
     $args = array(
         'post_type'      => 'photo',
         'posts_per_page' => 8,
         'paged'          => $paged,
         'post__not_in'   => $loaded_photos, // Exclure les photos déjà chargées
-        'orderby'        => 'rand',
+        'orderby'        => 'date', // Trier par date
+        'order'          => $order, // Sens du tri (ASC ou DESC)
     );
+
+    // Ajouter les filtres de taxonomie si des filtres sont appliqués
+    if (count($tax_query) > 1) {
+        $args['tax_query'] = $tax_query;
+    }
 
     $photo_query = new WP_Query($args);
 
@@ -46,5 +78,3 @@ function load_more_photos() {
     wp_reset_postdata();
     wp_die(); // Fin de la requête AJAX
 }
-
-?>
