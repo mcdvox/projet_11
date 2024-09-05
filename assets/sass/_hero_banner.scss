@@ -2,11 +2,12 @@
         display: flex;
         position: absolute;
         font-family: "SpaceMono", sans-serif;
+        font-style: italic;
         font-size: 96px;
         text-transform: uppercase;
         color: transparent;
         -webkit-text-stroke: 1px var(--blanc);
-        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-width: 3px;
         z-index: 10;
 }
 
