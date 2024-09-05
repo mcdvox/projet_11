@@ -177,5 +177,54 @@
 
     .others .related-photo {
         width: 100%;
+        margin: 15px 0;
+    }
+
+    .photo-navigation {
+        display: none;
+    }
+
+    .infos {
+        display: flex;
+        flex-direction: column;
+        align-items: center !important;
+        justify-content: center;
+        padding-top: 40px;
+        margin: auto;
+        border-bottom: 1px solid var(--noir);
+    }
+
+    .description {
+        display: flex;
+        flex: 1;
+        order: 2;
+        flex-direction: column;
+        font-family: "SpaceMono", sans-serif;
+        width: 50%;
+        border-bottom: none;
+    }
+
+    .infos-photo {
+        width: 50%;
+        flex: 1;
+        order: 1;
+    }
+
+    .photo-contact {
+        display: flex;
+        flex-direction: column; /* Mettre les éléments (texte et bouton) en colonne */
+        align-items: center; /* Centrer horizontalement le texte et le bouton */
+        justify-content: center; /* Centrer verticalement */
+        text-align: center; /* Centrer le texte dans le conteneur */
+        gap: 10px; /* Ajouter un espacement entre le texte et le bouton */
+    }
+
+    .contact {
+        display: block;
+    }
+
+    .others h3 {
+        display: flex;
+        justify-content: center;
     }
 }

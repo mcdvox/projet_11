@@ -1,0 +1,65 @@
+.photo-selection select {
+    display: inline-block; /* Afficher les éléments côte à côte */
+    margin-right: 20px; /* Marges pour espacer les éléments */
+}
+
+.filter-section {
+    display: flex; /* Utilisation de Flexbox */
+    gap: 10px; /* Espacement entre les filtres */
+    max-width: 100%; /* Largeur maximale de la section */
+    align-items: center; /* Aligner les éléments au centre verticalement */
+    .photo-selection,
+    .filter-section_date-sort {
+        margin-top: 50px;
+        margin-bottom: 35px;
+    }
+}
+
+.filter-section select {
+    display: inline-block; /* Afficher les éléments côte à côte */
+    font-family: 'Poppins';
+    font-size: 12px;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+    text-decoration: none;
+    height: 42px; /* Hauteur des filtres */
+    width: 260px; /* Largeur des filtres */
+    padding: 5px; /* Espacement interne pour les éléments */
+    border: 1px solid var(--gris-fonce); /* Bordure des filtres */
+    border-radius: 8px; /* Arrondi des coins */
+    box-sizing: border-box; /* Inclure le padding dans la largeur totale */
+}
+
+#filter-section_date-sort {
+    margin-left: auto; /* Pousse l'élément à l'extrême droite */
+}
+
+// Charger Plus
+.photo-button {
+    display: flex;
+    justify-content: center;
+}
+
+#photo-btn {
+    width: 272px;
+    height: 50px;
+    padding: 8px 15px;
+    margin: 50px 0;
+    border: none;
+    font-family: 'Space Mono';
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--noir);
+    background-color: var(--gris-medium);
+    border-radius: 2px;
+    box-shadow: 0px 2px 1px 0px var(--gris-light, 0.02);
+    transition: transform 0.35s ease, background-color 0.35s ease;   
+
+    &:hover {
+        color: var(--noir);
+        font-weight: 700;
+        background-color: var(--gris-medium);
+        transform: scale(1.1);
+    }  
+}

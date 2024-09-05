@@ -138,14 +138,14 @@ if ($custom_query->have_posts()) :
 
     // Définition des critères de recherche pour obtenir deux photos aléatoires de la même catégorie
     $args_random_photos = array(
-        'post_type' => 'photo',
-        'posts_per_page' => 2,
-        'orderby' => 'rand',
+        'post_type'         => 'photo',
+        'posts_per_page'    => 2,
+        'orderby'           => 'rand',
         'tax_query' => array(
             array(
-                'taxonomy' => 'categorie',
-                'field' => 'term_id',
-                'terms' => $categories,
+                'taxonomy'  => 'categorie',
+                'field'     => 'term_id',
+                'terms'     => $categories,
             ),
         ),
         'post__not_in' => array($current_photo_id) // Exclusion de la photo actuelle

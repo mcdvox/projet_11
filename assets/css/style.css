@@ -469,8 +469,114 @@ footer {
   }
   .others .related-photo {
     width: 100%;
+    margin: 15px 0;
+  }
+  .photo-navigation {
+    display: none;
+  }
+  .infos {
+    display: flex;
+    flex-direction: column;
+    align-items: center !important;
+    justify-content: center;
+    padding-top: 40px;
+    margin: auto;
+    border-bottom: 1px solid var(--noir);
+  }
+  .description {
+    display: flex;
+    flex: 1;
+    order: 2;
+    flex-direction: column;
+    font-family: "SpaceMono", sans-serif;
+    width: 50%;
+    border-bottom: none;
+  }
+  .infos-photo {
+    width: 50%;
+    flex: 1;
+    order: 1;
+  }
+  .photo-contact {
+    display: flex;
+    flex-direction: column; /* Mettre les éléments (texte et bouton) en colonne */
+    align-items: center; /* Centrer horizontalement le texte et le bouton */
+    justify-content: center; /* Centrer verticalement */
+    text-align: center; /* Centrer le texte dans le conteneur */
+    gap: 10px; /* Ajouter un espacement entre le texte et le bouton */
+  }
+  .contact {
+    display: block;
+  }
+  .others h3 {
+    display: flex;
+    justify-content: center;
   }
 }
+.photo-selection select {
+  display: inline-block; /* Afficher les éléments côte à côte */
+  margin-right: 20px; /* Marges pour espacer les éléments */
+}
+
+.filter-section {
+  display: flex; /* Utilisation de Flexbox */
+  gap: 10px; /* Espacement entre les filtres */
+  max-width: 100%; /* Largeur maximale de la section */
+  align-items: center; /* Aligner les éléments au centre verticalement */
+}
+.filter-section .photo-selection,
+.filter-section .filter-section_date-sort {
+  margin-top: 50px;
+  margin-bottom: 35px;
+}
+
+.filter-section select {
+  display: inline-block; /* Afficher les éléments côte à côte */
+  font-family: "Poppins";
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+  text-decoration: none;
+  height: 42px; /* Hauteur des filtres */
+  width: 260px; /* Largeur des filtres */
+  padding: 5px; /* Espacement interne pour les éléments */
+  border: 1px solid var(--gris-fonce); /* Bordure des filtres */
+  border-radius: 8px; /* Arrondi des coins */
+  box-sizing: border-box; /* Inclure le padding dans la largeur totale */
+}
+
+#filter-section_date-sort {
+  margin-left: auto; /* Pousse l'élément à l'extrême droite */
+}
+
+.photo-button {
+  display: flex;
+  justify-content: center;
+}
+
+#photo-btn {
+  width: 272px;
+  height: 50px;
+  padding: 8px 15px;
+  margin: 50px 0;
+  border: none;
+  font-family: "Space Mono";
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--noir);
+  background-color: var(--gris-medium);
+  border-radius: 2px;
+  box-shadow: 0px 2px 1px 0px var(--gris-light, 0.02);
+  transition: transform 0.35s ease, background-color 0.35s ease;
+}
+#photo-btn:hover {
+  color: var(--noir);
+  font-weight: 700;
+  background-color: var(--gris-medium);
+  transform: scale(1.1);
+}
+
 .hero h1 {
   display: flex;
   position: absolute;
@@ -497,6 +603,39 @@ footer {
   width: 100%; /* L'image prend toute la largeur de son conteneur */
   height: auto; /* Garde le ratio d'aspect de l'image */
   max-width: 100%; /* Assure que l'image ne dépasse pas la largeur de son conteneur */
+}
+
+.photos-grid {
+  display: grid; /* Utilisation de grid pour la mise en page */
+  grid-template-columns: repeat(2, 1fr); /* 2 colonnes de taille égale */
+  gap: 20px; /* Espacement entre les éléments */
+  max-width: 100%; /* Largeur maximale de la grille */
+  margin: 0 auto; /* Centre la grille */
+}
+
+.photo-item {
+  overflow: hidden; /* Cache le débordement */
+  height: 495px; /* Hauteur fixe pour chaque image */
+  position: relative; /* Position relative pour contenir l'image */
+}
+
+.photo-item img {
+  width: 100%; /* L'image prend toute la largeur de son conteneur */
+  height: 100%; /* L'image prend toute la hauteur du conteneur */
+  object-fit: cover; /* Recadre l'image pour qu'elle remplisse l'espace sans distorsion */
+  display: block; /* Supprime les espaces blancs autour de l'image */
+}
+
+.photos-grid p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 .width-max {

@@ -1,0 +1,32 @@
+.photos-grid {
+    display: grid; /* Utilisation de grid pour la mise en page */
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes de taille égale */
+    gap: 20px; /* Espacement entre les éléments */
+    max-width: 100%; /* Largeur maximale de la grille */
+    margin: 0 auto; /* Centre la grille */
+}
+
+.photo-item {
+    overflow: hidden; /* Cache le débordement */
+    height: 495px; /* Hauteur fixe pour chaque image */
+    position: relative; /* Position relative pour contenir l'image */
+}
+
+.photo-item img {
+    width: 100%; /* L'image prend toute la largeur de son conteneur */
+    height: 100%; /* L'image prend toute la hauteur du conteneur */
+    object-fit: cover; /* Recadre l'image pour qu'elle remplisse l'espace sans distorsion */
+    display: block; /* Supprime les espaces blancs autour de l'image */
+}
+
+.photos-grid p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+    text-decoration: none;
+}
