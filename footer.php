@@ -10,8 +10,13 @@
                     )); ?>
                 </nav><!-- .footer-menu -->
                 
+                <!-- Modale de contact -->
                 <?php get_template_part("/templates_part/modale") ?>
             </div>
+
+            <!-- lightbox -->
+            <?php get_template_part("/templates_part/lightbox") ?>
+                        
         </footer><!-- #colophon -->
         <?php wp_footer(); ?>
     </body>

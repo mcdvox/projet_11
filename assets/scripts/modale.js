@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Remplit le champ ref-photo du formulaire CF7 avec la référence
         var refPhotoField = document.querySelector('input[name="ref-photo"]');
         // Vérifie si le champ est trouvé
-        console.log(refPhotoField);
         if (refPhotoField) {
             refPhotoField.value = referenceValue;
             console.log("Reference photo: " + referenceValue); // Confirme que la valeur est bien définie

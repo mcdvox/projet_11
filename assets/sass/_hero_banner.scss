@@ -12,17 +12,20 @@
 }
 
 .hero-banner {
-    display: flex; /* Utilisation de flexbox pour centrer le contenu */
-    position: relative; /* Position relative pour contenir l'image */
-    justify-content: center; /* Centre le contenu horizontalement */
-    align-items: center; /* Centre le contenu verticalement */
-    width: 100%; /* Largeur de la bannière à 100% */
-    overflow: hidden; /* Assure qu'il n'y ait pas de débordement */
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    max-width: 1440px;
+    // overflow: hidden;
+    margin: auto;
 }
 
 .full-width {
-    display: block; /* Supprime les espaces blancs autour de l'image */
-    width: 100%; /* L'image prend toute la largeur de son conteneur */
-    height: auto; /* Garde le ratio d'aspect de l'image */
-    max-width: 100%; /* Assure que l'image ne dépasse pas la largeur de son conteneur */
+    // display: block; /* Supprime les espaces blancs autour de l'image */
+    width: 1447px; /* L'image prend toute la largeur de son conteneur */
+    height: 966px; /* Garde le ratio d'aspect de l'image */
+    // max-width: 100%; /* Assure que l'image ne dépasse pas la largeur de son conteneur */
 }

@@ -29,7 +29,7 @@ jQuery(document).ready(function($) {
 
         // Faire une requête AJAX
         $.ajax({
-            url: ajaxurl,
+            url: ajax_params.ajaxurl, // Utilisation de ajax_params.ajaxurl au lieu de ajaxurl
             type: 'POST',
             data: {
                 action: 'load_more_photos', // Action définie dans functions-ajax.php
@@ -43,7 +43,6 @@ jQuery(document).ready(function($) {
                 button.text('Chargement...'); // Afficher un message de chargement
             },
             success: function(response) {
-                console.log(response); // Pour vérifier la réponse dans la console
                 if (response) {
                     $('.photos-grid').append(response); // Ajouter les nouvelles photos
                     button.data('page', page + 1); // Incrémenter le numéro de page
@@ -59,7 +58,10 @@ jQuery(document).ready(function($) {
      * Fonction pour réinitialiser et filtrer les photos
      */
     function loadPhotos(reset = false) {
+        var button = $('#photo-btn');
         var page = reset ? 1 : $('#photo-btn').data('page'); // Réinitialiser si nécessaire
+        
+        // Récupérer les valeurs des filtres
         var category = $('#photo-categorie-select').val();
         var format = $('#photo-format-select').val();
         var order = $('#filter-section_date-sort').val();
@@ -78,7 +80,7 @@ jQuery(document).ready(function($) {
 
         // Faire une requête AJAX pour appliquer le filtre et le tri
         $.ajax({
-            url: ajaxurl,
+            url: ajax_params.ajaxurl, // Utilisation correcte de ajax_params.ajaxurl
             type: 'POST',
             data: {
                 action: 'load_more_photos', // Action définie dans functions-ajax.php
@@ -92,10 +94,9 @@ jQuery(document).ready(function($) {
                 $('#photo-btn').text('Chargement...'); // Afficher un message de chargement
             },
             success: function(response) {
-                console.log(response); // Pour vérifier la réponse dans la console
                 if (response) {
                     $('.photos-grid').append(response); // Ajouter les nouvelles photos
-                    button.data('page', page + 1); // Incrémenter le numéro de page
+                    button.data('page', 1); // Incrémenter le numéro de page
                     button.text('Charger plus');
                 } else {
                     $('#photo-btn').text('Aucune autre photo à afficher').prop('disabled', true);

@@ -1,41 +1,91 @@
-.photo-selection select {
-    display: inline-block; /* Afficher les éléments côte à côte */
-    margin-right: 20px; /* Marges pour espacer les éléments */
+// Section Filtres
+// Conteneur des filtres
+.photo-selection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 80px 0 20px;
 }
 
-.filter-section {
-    display: flex; /* Utilisation de Flexbox */
-    gap: 10px; /* Espacement entre les filtres */
-    max-width: 100%; /* Largeur maximale de la section */
-    align-items: center; /* Aligner les éléments au centre verticalement */
-    .photo-selection,
-    .filter-section_date-sort {
-        margin-top: 50px;
-        margin-bottom: 35px;
-    }
+// Filtres
+.filter-item {
+    width: 260px;
+    height: 42px;
+    margin-right: 15px;
+    padding-left: 7px;
 }
 
-.filter-section select {
-    display: inline-block; /* Afficher les éléments côte à côte */
+.filter-item:last-child {
+    margin-right: 0;
+    margin-left: auto;
+    padding-right: 12px;
+}
+
+select {
+    width: 100%;
+    height: 100%;
+    padding: 5px 10px;
+}
+
+select option {
+    text-transform: none;
+}
+
+// Police des Filtres
+.select2-container--default .select2-selection--single {
+    border-radius: 8px;
     font-family: 'Poppins';
-    font-size: 12px;
-    font-weight: 400;
-    font-style: normal;
     text-transform: uppercase;
-    text-decoration: none;
-    height: 42px; /* Hauteur des filtres */
-    width: 260px; /* Largeur des filtres */
-    padding: 5px; /* Espacement interne pour les éléments */
-    border: 1px solid var(--gris-fonce); /* Bordure des filtres */
-    border-radius: 8px; /* Arrondi des coins */
-    box-sizing: border-box; /* Inclure le padding dans la largeur totale */
+    font-size: 18px;
 }
 
-#filter-section_date-sort {
-    margin-left: auto; /* Pousse l'élément à l'extrême droite */
+.select2-results__option--selectable {
+    font-family: 'Poppins';
+    font-size: 18px;
 }
 
-// Charger Plus
+// Suppression de la recherche select2
+.select2-search--dropdown {
+    display: none;
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+    background-color: var(--rouge);
+}
+
+.select2-container--default .select2-results__option--selected {
+    background-color: var(--rouge-tertiaire);
+}
+
+/* Style par défaut, flèche vers le haut */
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 26px;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    width: 20px;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
+/* Lorsque le menu select2 est ouvert, inverser la flèche vers le bas */
+.select2-container--open .select2-selection__arrow {
+    transform: rotate(180deg);
+}
+
+/* Appliquer un border-radius et une bordure bleue au clic sur un select2 */
+.select2-container--default .select2-selection--single:focus,
+.select2-container--default .select2-selection--single.select2-selection__rendered:focus,
+.select2-container--default .select2-selection--single.select2-selection__rendered:active {
+    border: 2px solid #215AFF;
+    border-radius: 5px;
+    outline: none;
+}
+
+
+
+// Bouton Charger Plus
 .photo-button {
     display: flex;
     justify-content: center;

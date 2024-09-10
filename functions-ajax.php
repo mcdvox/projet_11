@@ -11,11 +11,6 @@ function load_more_photos() {
     // Récupérer les IDs des photos déjà chargées
     $loaded_photos = isset($_POST['loaded_photos']) ? array_map('intval', $_POST['loaded_photos']) : array();
 
-    // Inclure l'ID de la bannière dans l'exclusion (si défini dans la session)
-    if (isset($_SESSION['banner_post_id'])) {
-        $loaded_photos[] = $_SESSION['banner_post_id'];
-    }
-
     // Filtrer par catégorie et format (le cas échéant)
     $category = isset($_POST['category']) ? sanitize_text_field($_POST['category']) : '';
     $format = isset($_POST['format']) ? sanitize_text_field($_POST['format']) : '';

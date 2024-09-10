@@ -132,6 +132,19 @@ footer {
   justify-content: center;
 }
 
+/* Styles pour les écrans inférieurs à 864px */
+@media screen and (max-width: 864px) {
+  footer {
+    width: 100%;
+    height: 40px;
+    border-top: none;
+  }
+  .footer-inner {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid var(--noir);
+  }
+}
 .contact-modal {
   position: fixed;
   z-index: 1000;
@@ -513,41 +526,84 @@ footer {
     justify-content: center;
   }
 }
-.photo-selection select {
-  display: inline-block; /* Afficher les éléments côte à côte */
-  margin-right: 20px; /* Marges pour espacer les éléments */
+.photo-selection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 80px 0 20px;
 }
 
-.filter-section {
-  display: flex; /* Utilisation de Flexbox */
-  gap: 10px; /* Espacement entre les filtres */
-  max-width: 100%; /* Largeur maximale de la section */
-  align-items: center; /* Aligner les éléments au centre verticalement */
-}
-.filter-section .photo-selection,
-.filter-section .filter-section_date-sort {
-  margin-top: 50px;
-  margin-bottom: 35px;
+.filter-item {
+  width: 260px;
+  height: 42px;
+  margin-right: 15px;
+  padding-left: 7px;
 }
 
-.filter-section select {
-  display: inline-block; /* Afficher les éléments côte à côte */
+.filter-item:last-child {
+  margin-right: 0;
+  margin-left: auto;
+  padding-right: 12px;
+}
+
+select {
+  width: 100%;
+  height: 100%;
+  padding: 5px 10px;
+}
+
+select option {
+  text-transform: none;
+}
+
+.select2-container--default .select2-selection--single {
+  border-radius: 8px;
   font-family: "Poppins";
-  font-size: 12px;
-  font-weight: 400;
-  font-style: normal;
   text-transform: uppercase;
-  text-decoration: none;
-  height: 42px; /* Hauteur des filtres */
-  width: 260px; /* Largeur des filtres */
-  padding: 5px; /* Espacement interne pour les éléments */
-  border: 1px solid var(--gris-fonce); /* Bordure des filtres */
-  border-radius: 8px; /* Arrondi des coins */
-  box-sizing: border-box; /* Inclure le padding dans la largeur totale */
+  font-size: 18px;
 }
 
-#filter-section_date-sort {
-  margin-left: auto; /* Pousse l'élément à l'extrême droite */
+.select2-results__option--selectable {
+  font-family: "Poppins";
+  font-size: 18px;
+}
+
+.select2-search--dropdown {
+  display: none;
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+  background-color: var(--rouge);
+}
+
+.select2-container--default .select2-results__option--selected {
+  background-color: var(--rouge-tertiaire);
+}
+
+/* Style par défaut, flèche vers le haut */
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 26px;
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 20px;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+/* Lorsque le menu select2 est ouvert, inverser la flèche vers le bas */
+.select2-container--open .select2-selection__arrow {
+  transform: rotate(180deg);
+}
+
+/* Appliquer un border-radius et une bordure bleue au clic sur un select2 */
+.select2-container--default .select2-selection--single:focus,
+.select2-container--default .select2-selection--single.select2-selection__rendered:focus,
+.select2-container--default .select2-selection--single.select2-selection__rendered:active {
+  border: 2px solid #215AFF;
+  border-radius: 5px;
+  outline: none;
 }
 
 .photo-button {
@@ -591,19 +647,19 @@ footer {
 }
 
 .hero-banner {
-  display: flex; /* Utilisation de flexbox pour centrer le contenu */
-  position: relative; /* Position relative pour contenir l'image */
-  justify-content: center; /* Centre le contenu horizontalement */
-  align-items: center; /* Centre le contenu verticalement */
-  width: 100%; /* Largeur de la bannière à 100% */
-  overflow: hidden; /* Assure qu'il n'y ait pas de débordement */
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  max-width: 1440px;
+  margin: auto;
 }
 
 .full-width {
-  display: block; /* Supprime les espaces blancs autour de l'image */
-  width: 100%; /* L'image prend toute la largeur de son conteneur */
-  height: auto; /* Garde le ratio d'aspect de l'image */
-  max-width: 100%; /* Assure que l'image ne dépasse pas la largeur de son conteneur */
+  width: 1447px; /* L'image prend toute la largeur de son conteneur */
+  height: 966px; /* Garde le ratio d'aspect de l'image */
 }
 
 .photos-grid {
@@ -637,6 +693,85 @@ footer {
   font-style: normal;
   text-transform: uppercase;
   text-decoration: none;
+}
+
+/* Style de la lightbox */
+.lightbox {
+  display: none; /* Masquer la lightbox par défaut */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Fond semi-transparent */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  /* Style du titre dans la lightbox */
+}
+.lightbox__container {
+  position: relative;
+  max-width: 90%;
+  max-height: 80%;
+  overflow: hidden;
+}
+.lightbox__container img {
+  height: 1080px; /* Hauteur fixe */
+  width: auto; /* Largeur proportionnelle */
+  display: block;
+  max-height: 100%;
+  margin: auto;
+}
+.lightbox__close, .lightbox__next, .lightbox__prev {
+  position: absolute;
+  background-color: var(--blanc);
+  color: var(--noir);
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+.lightbox__close {
+  top: 10px;
+  right: 10px;
+  z-index: 1001;
+}
+.lightbox__next {
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  z-index: 1001;
+}
+.lightbox__prev {
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  z-index: 1001;
+}
+.lightbox__title {
+  text-align: center;
+  font-size: 18px;
+  color: var(--blanc);
+  margin-top: 15px;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent sous l'image */
+  width: 100%;
+}
+
+/* Style des miniatures */
+.photo-item {
+  display: inline-block;
+  margin: 10px;
+}
+
+.random-photo {
+  max-width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.random-photo:hover {
+  opacity: 0.6; /* Appliquer une opacité de 60% au hover */
+  background-color: var(--noir);
 }
 
 .width-max {

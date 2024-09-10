@@ -26,7 +26,7 @@ function display_random_paysage_banner() {
 
         // Afficher l'image mise en avant avec le lien vers l'article
         if (has_post_thumbnail()) {
-            echo '<a href="' . esc_url(get_permalink()) . '">';
+            // echo '<a href="' . esc_url(get_permalink()) . '">';
             the_post_thumbnail('full', array('class' => 'full-width'));
             echo '</a>';
         } else {
