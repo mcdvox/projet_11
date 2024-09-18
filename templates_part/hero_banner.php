@@ -1,3 +1,4 @@
+<!-- Template Hero Banner -->
 <?php
 // Fonction pour afficher la bannière avec une photo aléatoire au format paysage
 function display_random_paysage_banner() {

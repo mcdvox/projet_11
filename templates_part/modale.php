@@ -1,3 +1,4 @@
+<!-- Template Modale -->
 <!-- Modale de contact -->
  <!-- Structure de la Modale -->
 <div class="contact-modal" id="contact-modal" style="display: none;">

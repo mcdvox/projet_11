@@ -1,3 +1,4 @@
+<!-- Front Page -->
 <!-- Appel du fichier en-tête -->
 <?php get_header(); ?>
 
@@ -14,21 +15,34 @@
     <section class="filter-section width-max">
         <div class="photo-selection">
             <?php
+
             // Fonction pour générer un select avec des termes de taxonomie
             function generate_taxonomy_select($taxonomy, $label) {
+
+                // `get_terms()` récupère les termes d'une taxonomie donnée (catégorie et format)
                 $terms = get_terms($taxonomy);
+
+                // Création de l'élément select pour la taxonomie
                 echo '<div class="filter-item">';
                 echo '<select id="photo-' . esc_attr($taxonomy) . '-select">';
-                echo '<option value="" selected enabled>' . esc_html($label) . '</option>'; // Placeholder
+
+                // Option par défaut, non sélectionnable, servant de placeholder
+                echo '<option value="" selected enabled>' . esc_html($label) . '</option>';
+
+                // Boucle sur les termes pour générer chaque option
                 foreach ($terms as $term) {
                     echo '<option value="' . esc_attr($term->slug) . '">' . esc_html($term->name) . '</option>';
                 }
+
                 echo '</select>';
                 echo '</div>';
             }
 
             // Appel des filtres pour les catégories et formats
+            // Appel de la fonction pour générer un select pour la taxonomie "categorie"
             generate_taxonomy_select('categorie', 'Catégories');
+            
+            // Appel de la fonction pour générer un select pour la taxonomie "format"
             generate_taxonomy_select('format', 'Formats');
             ?>
 
@@ -51,7 +65,7 @@
     </section>
 
     <!-- Bouton "Charger plus" -->
-    <div class="photo-button">
+    <div class="photo-button width-max">
         <button id="photo-btn" type="button" data-page="1">Charger plus</button>
     </div>
 </main>

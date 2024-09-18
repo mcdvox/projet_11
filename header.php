@@ -1,3 +1,4 @@
+<!-- Header -->
 <!DOCTYPE html>
 <!-- Détection automatique de la langue -->
 <html <?php language_attributes(); ?>>

@@ -1,3 +1,4 @@
+// Script Modale
 document.addEventListener('DOMContentLoaded', function() {
 
     // Sélection de la modale
@@ -29,7 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Vérifie si le champ est trouvé
         if (refPhotoField) {
             refPhotoField.value = referenceValue;
-            console.log("Reference photo: " + referenceValue); // Confirme que la valeur est bien définie
+            // Confirme que la valeur est bien définie
+            console.log("Reference photo: " + referenceValue); 
         } else {
             console.log("ref-photo non trouvée");
         }

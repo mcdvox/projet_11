@@ -8,7 +8,7 @@
         color: transparent;
         -webkit-text-stroke: 1px var(--blanc);
         -webkit-text-stroke-width: 3px;
-        z-index: 10;
+        z-index: 1;
 }
 
 .hero-banner {
@@ -19,13 +19,10 @@
     width: 100%;
     height: auto;
     max-width: 1440px;
-    // overflow: hidden;
     margin: auto;
 }
 
 .full-width {
-    // display: block; /* Supprime les espaces blancs autour de l'image */
-    width: 1447px; /* L'image prend toute la largeur de son conteneur */
-    height: 966px; /* Garde le ratio d'aspect de l'image */
-    // max-width: 100%; /* Assure que l'image ne dépasse pas la largeur de son conteneur */
+    width: 1447px;
+    height: 966px;
 }

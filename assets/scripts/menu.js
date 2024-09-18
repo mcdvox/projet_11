@@ -1,4 +1,4 @@
-// MENU BURGER
+// Script Menu Burger
 document.addEventListener('DOMContentLoaded', function() {
     const button = document.querySelector('.menu_burger');
     const menuNav = document.querySelector('#nav-burger');
@@ -14,11 +14,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Ajouter une condition pour changer la propriété display de menuNav
         if (menuNav.classList.contains('show-nav')) {
-            menuNav.style.display = 'block'; // Afficher le menu burger
-            button.classList.add('open'); // Ajouter la classe open au bouton burger
+            // Afficher le menu burger
+            menuNav.style.display = 'block';
+            // Ajouter la classe open au bouton burger
+            button.classList.add('open'); 
         } else {
-            menuNav.style.display = 'none'; // Masquer le menu burger
-            button.classList.remove('open'); // Supprimer la classe open du bouton burger
+            // Masquer le menu burger
+            menuNav.style.display = 'none';
+            // Supprimer la classe open du bouton burger
+            button.classList.remove('open');
         }
     });
 });

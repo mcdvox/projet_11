@@ -1,10 +1,12 @@
+// Script Select2
 jQuery(document).ready(function($) {
     // Initialisation de Select2 pour les catégories, formats et tri
     $('#photo-categorie-select, #photo-format-select, #filter-section_date-sort').select2({
         placeholder: function() {
             return $(this).data('placeholder');
         },
-        allowClear: true, // Permet de rendre les placeholders réinitialisables
+        // Permet de rendre les placeholders réinitialisables
+        allowClear: true,
         width: '100%'
     });
 
@@ -16,7 +18,8 @@ jQuery(document).ready(function($) {
     // Gérer les clics sur le placeholder pour réinitialiser le filtre
     $('.select2-selection__placeholder').on('click', function() {
         var selectId = $(this).closest('.select2-container').prev('select').attr('id');
-        $('#' + selectId).val(null).trigger('change'); // Réinitialiser le filtre
+        // Réinitialiser le filtre
+        $('#' + selectId).val(null).trigger('change');
     });
 
     // Fonction pour actualiser les photos via AJAX
@@ -25,7 +28,7 @@ jQuery(document).ready(function($) {
         var format = $('#photo-format-select').val();
         var order = $('#filter-section_date-sort').val();
 
-        // Envoyer une requête AJAX pour actualiser les photos
+        // Requête AJAX pour actualiser les photos
         $.ajax({
             url: ajax_params.ajaxurl,
             type: 'POST',
@@ -41,6 +44,10 @@ jQuery(document).ready(function($) {
             },
             success: function(response) {
                 $('.photos-grid').html(response);
+                
+                    // Initialiser les déclencheurs de la lightbox
+                    console.log('test')
+                    initLightboxTriggers();
             },
             error: function() {
                 $('.photos-grid').html('<p>Erreur lors du chargement des photos.</p>');
