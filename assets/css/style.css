@@ -884,6 +884,9 @@ select option {
     max-width: 100%;
     margin: 0 auto;
   }
+  .fullscreen-icon {
+    display: none;
+  }
 }
 /* Style de la lightbox */
 .lightbox {
