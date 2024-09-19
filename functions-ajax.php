@@ -89,7 +89,14 @@ function load_more_photos() {
                     data-ref="' . esc_attr($photo_ref) . '"
                     data-category="' . esc_attr($category_name) . '">';
                 echo '<img src="' . get_template_directory_uri() . '/assets/images/eye_informations.png" class="eye-icon" alt="Informations">';
-                echo '</a>';
+                echo '</a>';                
+
+                // Ajouter le titre de la photo (en bas à gauche)
+                echo '<div class="photo-title">' . get_the_title() . '</div>';
+
+                // Ajouter la catégorie de la photo (en bas à droite)
+                echo '<div class="photo-category">' . esc_attr($category_name) . '</div>';
+
                 echo '<img src="' . get_template_directory_uri() . '/assets/images/full_screen.png" class="fullscreen-icon lightbox-trigger" alt="Plein écran" data-image="' . get_the_post_thumbnail_url(get_the_ID(), 'full') . '" data-ref="' . esc_attr($photo_ref) . '" data-category="' . esc_attr($category_name) . '">';
                 echo '</div>';
                 echo '</div>';

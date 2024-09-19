@@ -38,7 +38,7 @@
 
 /* Icone "eye-icon" centrée */
 .photo-item .overlay .eye-icon {
-    position: absolute;
+    // position: absolute;
     width: 46px;
     height: auto;
 }
@@ -56,10 +56,9 @@
     width: 260px;
     height: 42px;
     margin-right: 15px;
-    padding-left: 7px;
 
-    @media (max-width: 768px) {
-        width: 100%; /* S'assurer que les selects prennent toute la largeur */
+    @media (max-width: 864px) {
+        width: 100%;
         margin-right: 0;
         margin-bottom: 10px;
     }
@@ -70,7 +69,7 @@
     margin-left: auto;
     padding-right: 12px;
 
-    @media (max-width: 768px) {
+    @media (max-width: 864px) {
         margin-left: 0;
         padding-right: 0;
     }
