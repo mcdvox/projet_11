@@ -193,7 +193,13 @@ if ($custom_query->have_posts()) :
                     data-ref="' . esc_attr($photo_ref) . '"
                     data-category="' . esc_attr($category_name) . '">';
                 echo '<img src="' . get_template_directory_uri() . '/assets/images/eye_informations.png" class="eye-icon" alt="Informations">';
-                echo '</a>';
+                echo '</a>';                
+
+                // Ajouter le titre de la photo (en bas à gauche)
+                echo '<div class="photo-title">' . get_the_title() . '</div>';
+
+                // Ajouter la catégorie de la photo (en bas à droite)
+                echo '<div class="photo-category">' . esc_attr($category_name) . '</div>';
 
                 // Ajouter le titre de la photo (en bas à gauche)
                 echo '<div class="photo-title">' . get_the_title() . '</div>';

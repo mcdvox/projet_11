@@ -11,8 +11,13 @@ footer {
     justify-content: center;
 }
 
+<<<<<<< HEAD
 /* Styles pour les écrans inférieurs à 768px */
 @media screen and (max-width: 768px) {
+=======
+/* Styles pour les écrans inférieurs à 864px */
+@media screen and (max-width: 864px) {
+>>>>>>> b749615480c3a527804858d6037399200c7437b4
     footer {    
         width: 100%;
         height: 40px;

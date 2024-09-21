@@ -182,15 +182,21 @@
 
 .overlay {
     display: flex;
+<<<<<<< HEAD
     justify-content: center;
     align-items: center;
+=======
+>>>>>>> b749615480c3a527804858d6037399200c7437b4
     position: absolute;
+    justify-content: center;
+    align-items: center;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     opacity: 0;
     transition: opacity 0.3s ease;
+<<<<<<< HEAD
 
     .eye-icon,
     .fullscreen-icon {
@@ -208,15 +214,67 @@
         right: 10px;
         width: 34px;
     }
+=======
+>>>>>>> b749615480c3a527804858d6037399200c7437b4
 }
 
 .related-photo-item:hover .overlay {
     opacity: 1;
 }
 
+<<<<<<< HEAD
 /* Styles pour les écrans inférieurs à 768px */
 @media screen and (max-width: 768px) {
     .description {
+=======
+.eye-icon {
+    width: 46px;
+    height: auto;
+    z-index: 10;
+}
+
+.fullscreen-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 34px;
+    height: auto;
+    z-index: 10;
+}
+
+
+/* Styles pour les écrans inférieurs à 864px */
+@media screen and (max-width: 864px) {
+    .description {
+    display: flex;
+    flex-direction: column;
+    font-family: "SpaceMono", sans-serif;
+    width: 50%;
+    border-bottom: 1px solid var(--noir);
+    & > h2 {
+        font-size: 46px;
+        font-weight: 420;
+        font-style: italic;
+        text-transform: uppercase;
+        text-decoration: none;
+        width: 80%;
+        color: var(--noir);
+    }
+    & > p {
+        font-size: 14px;
+        font-weight: 400;
+        font-style: italic;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+}
+
+    .others .related-photos-container {
+        align-items: center;
+    }
+
+    .related-photos-container {
+>>>>>>> b749615480c3a527804858d6037399200c7437b4
         display: flex;
         flex-direction: column;
         text-align: start;
@@ -300,6 +358,10 @@
         }
     }
 
+    .others .random-photo {
+        padding-bottom: 25px;
+    }
+
     .photo-contact {
         display: flex;
         flex-direction: column;
@@ -327,6 +389,7 @@
         }
     }
 
+<<<<<<< HEAD
     .btn-contact {
         width: 263px;
         height: 50px;
@@ -362,3 +425,13 @@
         height: 990px;
     }
 }
+=======
+    .related-photo-item .overlay .photo-category {
+        bottom: 40px;
+    }
+
+    .related-photo-item .overlay .photo-title {
+        bottom: 40px;
+    }
+}
+>>>>>>> b749615480c3a527804858d6037399200c7437b4
