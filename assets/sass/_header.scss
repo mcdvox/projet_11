@@ -8,6 +8,7 @@ header {
 .header-inner {
     display: flex;
     justify-content: space-between;
+    box-sizing: border-box;
 }
 
 // Logo
@@ -42,23 +43,27 @@ nav {
     }
 }
 
-/* Styles pour les écrans inférieurs à 864px */
-@media screen and (max-width: 864px) {
+/* Styles pour les écrans inférieurs à 768px */
+@media screen and (max-width: 768px) {
     .nav-menu {
         display: block;
-        list-style: none; /* Supprimer les puces */
+        list-style: none;
         padding: 0;
         margin: 0;
-        text-align: center; /* Centre le texte dans chaque élément du menu */
+        text-align: center;
+
+        li {
+            margin-bottom: 15px;
+        }
+
+        a {
+            text-decoration: none;
+            padding: 10px 20px;
+            color: #333;
+        }
     }
-    
-    .nav-menu li {
-        margin-bottom: 15px; /* Espacement entre les éléments du menu (facultatif) */
-    }
-    
-    .nav-menu a {
-        text-decoration: none; /* Supprime le soulignement des liens */
-        padding: 10px 20px; /* Ajoute du rembourrage autour du lien */
-        color: #333; /* Couleur du texte du lien */
+
+    .header-inner {
+        padding: 20px 30px;
     }
 }

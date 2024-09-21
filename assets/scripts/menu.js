@@ -17,12 +17,16 @@ document.addEventListener('DOMContentLoaded', function() {
             // Afficher le menu burger
             menuNav.style.display = 'block';
             // Ajouter la classe open au bouton burger
-            button.classList.add('open'); 
+            button.classList.add('open');
+            // Désactiver le scroll en ajoutant la classe 'no-scroll' au body
+            document.body.classList.add('no-scroll');
         } else {
             // Masquer le menu burger
             menuNav.style.display = 'none';
             // Supprimer la classe open du bouton burger
             button.classList.remove('open');
+            // Réactiver le scroll en supprimant la classe 'no-scroll' du body
+            document.body.classList.remove('no-scroll');
         }
     });
 });

@@ -32,13 +32,13 @@
 }
 
 // Photo
-// .infos-photo {
-//     width: 50%;
-//     & > img {
-//         height: auto;
-//         max-width: 100%;
-//     }
-// }
+.infos-photo {
+    width: 50%;
+    & > img {
+        height: auto;
+        max-width: 100%;
+    }
+}
 
 // Partie contact
 .contact {
@@ -70,8 +70,11 @@
 }
 
 .btn-contact {
+    font-family: "SpaceMono", sans-serif;
+    font-size: 12px;
     width: 272px;
     height: 50px;
+    border: none;
 }
 
 // Flèches droite et gauche
@@ -154,6 +157,13 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 60px;
+        
+    & > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        }
     }
     
     .random-photo {
@@ -165,58 +175,98 @@
     }
 }
 
-
-
-
-
 /* Style pour centrer l'icône "eye" */
 .related-photo-item {
-    position: relative; /* Nécessaire pour positionner les éléments en absolu */
+    position: relative;
 }
 
 .overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0; /* Masque par défaut */
-    transition: opacity 0.3s ease; /* Animation lors du survol */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    .eye-icon,
+    .fullscreen-icon {
+        z-index: 10;
+        height: auto;
+    }
+
+    .eye-icon {
+        width: 46px;
+    }
+
+    .fullscreen-icon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 34px;
+    }
 }
 
 .related-photo-item:hover .overlay {
-    opacity: 1; /* Affiche l'overlay lors du survol */
+    opacity: 1;
 }
 
-.eye-icon {
-    width: 46px;
-    height: auto;
-    z-index: 10; /* S'assure que l'icône est au-dessus de l'image */
-}
-
-.fullscreen-icon {
-    position: absolute;
-    top: 10px; /* Ajuste la distance par rapport au haut */
-    right: 10px; /* Ajuste la distance par rapport à la droite */
-    width: 34px;
-    height: auto;
-    z-index: 10; /* S'assure que l'icône est au-dessus de l'image */
-}
-
-
-/* Styles pour les écrans inférieurs à 864px */
-@media screen and (max-width: 864px) {
-    .related-photos-container {
+/* Styles pour les écrans inférieurs à 768px */
+@media screen and (max-width: 768px) {
+    .description {
         display: flex;
         flex-direction: column;
+        text-align: start;
+        font-family: "SpaceMono", sans-serif;
+        width: 90%;
+        max-width: 100%;
+        margin-left: 60px;
+        padding-bottom: 50px;
+        flex: 1;
+        order: 2;
+        border-bottom: none;
+
+        h2 {
+            font-size: 46px;
+            font-weight: 420;
+            font-style: italic;
+            text-transform: uppercase;
+            text-decoration: none;
+            width: 80%;
+            color: var(--noir);
+        }
+
+        p {
+            font-size: 14px;
+            font-weight: 400;
+            font-style: italic;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
     }
 
     .others {
         width: 100%;
         margin: 15px 0;
+
+        h3 {
+            display: flex;
+            justify-content: center;
+        }
+
+        .related-photos-container {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .random-photo {
+            padding-bottom: 25px;
+            object-fit: cover;
+        }
     }
 
     .photo-navigation {
@@ -226,44 +276,89 @@
     .infos {
         display: flex;
         flex-direction: column;
-        align-items: center !important;
+        align-items: center;
         justify-content: center;
+        width: 100%;
         padding-top: 40px;
         margin: auto;
         border-bottom: 1px solid var(--noir);
     }
 
-    .description {
-        display: flex;
-        flex: 1;
-        order: 2;
-        flex-direction: column;
-        font-family: "SpaceMono", sans-serif;
-        width: 50%;
-        border-bottom: none;
-    }
-
     .infos-photo {
-        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
         flex: 1;
         order: 1;
+
+        img {
+            width: 85%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
     }
 
     .photo-contact {
         display: flex;
-        flex-direction: column; /* Mettre les éléments (texte et bouton) en colonne */
-        align-items: center; /* Centrer horizontalement le texte et le bouton */
-        justify-content: center; /* Centrer verticalement */
-        text-align: center; /* Centrer le texte dans le conteneur */
-        gap: 10px; /* Ajouter un espacement entre le texte et le bouton */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
     }
 
     .contact {
         display: block;
     }
 
-    .others h3 {
+    .related-photo-item {
         display: flex;
         justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        img {
+            width: 95%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    .btn-contact {
+        width: 263px;
+        height: 50px;
+    }
+
+    .fullscreen-icon {
+        display: none !important;
+    }
+
+    .photos-grid {
+    grid-template-columns: none;
+    gap: 0 0 20px 0;
+    max-width: 100%;
+    margin: 0 auto;
+    }
+
+    .fullscreen-icon {
+        display: none;
+    }
+
+    .photo-title {
+        left: 300px !important;
+        bottom: 40px !important;
+    }
+    .photo-category {
+        right: 300px !important;
+        bottom: 40px !important;
+    }
+
+    .photo-item {
+        margin: 30px !important;
+        width: 1128px;
+        height: 990px;
     }
 }

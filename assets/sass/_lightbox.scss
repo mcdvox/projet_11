@@ -103,9 +103,9 @@
 .random-photo {
     max-width: 100%;
     transition: transform 0.3s ease;
-}
 
-.random-photo:hover {
-    opacity: 0.6;
-    background-color: var(--noir);
+    &:hover {
+        opacity: 0.6;
+        background-color: var(--noir);
+    }
 }

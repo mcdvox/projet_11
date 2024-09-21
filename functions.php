@@ -9,6 +9,8 @@ if (!session_id()) {
     session_start();
 }
 
+session_write_close();
+
 // Ajouter le support pour les fonctionnalités du thème
 function motaphoto_theme_supports() {
     

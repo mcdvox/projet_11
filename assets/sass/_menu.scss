@@ -3,62 +3,55 @@
     display: none;
 }
 
-/* Styles pour les écrans inférieurs à 864px */
-@media screen and (max-width: 864px) {
+/* Styles pour les écrans inférieurs à 768px */
+@media screen and (max-width: 768px) {
     /* Afficher le bouton burger sur mobile */
     .menu_burger {
         display: block;
-        position: relative;
         width: 45px;
         height: 45px;
-        left:75px;
+        left: 75px;
         border: none;
         background: transparent;
         cursor: pointer;
         padding: 0;
         z-index: 10;
+
+        .line,
+        .line::before,
+        .line::after {
+            display: block;
+            position: absolute;
+            width: 27px;
+            height: 2px;
+            border-radius: 3px;
+            background: var(--noir);
+            transition: all 0.5s ease-in-out;
+            content: "";
+        }
+
+        .line::before {
+            transform: translateY(-8px);
+        }
+
+        .line::after {
+            transform: translateY(8px);
+        }
+
+        &.open .line {
+            background: transparent;
+
+            &::before {
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                transform: rotate(-45deg);
+            }
+        }
     }
 
-    /* Créer les lignes du burger */
-    .menu_burger .line,
-    .menu_burger .line::before,
-    .menu_burger .line::after {
-        display: block;
-        position: absolute;
-        width: 27px;
-        height: 2px;
-        border-radius: 3px;
-        background: var(--noir);
-        transition: all 0.5s ease-in-out;
-        content: "";
-    }
-
-    .menu_burger .line {
-        position: relative;
-    }
-
-    .menu_burger .line::before {
-        transform: translateY(-8px);
-    }
-
-    .menu_burger .line::after {
-        transform: translateY(8px);
-    }
-
-    /* Modifier l'animation lors de l'ouverture du burger */
-    .menu_burger.open .line {
-        background: transparent;
-    }
-
-    .menu_burger.open .line::before {
-        transform: rotate(45deg);
-    }
-
-    .menu_burger.open .line::after {
-        transform: rotate(-45deg);
-    }
-
-    /* Style du menu burger ouvert */
+    /* Style du menu burger */
     .nav_burger {
         display: none;
         position: fixed;
@@ -66,44 +59,47 @@
         align-items: center;
         justify-content: center;
         list-style: none;
-        line-height: 100px;
+        line-height: 200px;
         gap: 18px;
-        top: 88px;
+        top: 125px;
         left: 0;
         width: 100%;
         height: 100%;
         background: var(--rouge);
         z-index: 9;
+
+        &.show {
+            display: flex;
+        }
+
+        .nav-burger a {
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-family: "SpaceMono";
+            font-size: 96px;
+            font-weight: 400;
+            margin-top: 47px;
+            color: var(--blanc);
+        }
+
+        ul {
+            text-align: center;
+            text-decoration: none;
+            list-style: none;
+            margin-top: 150px;
+            margin-right: 10%;
+            padding-top: 350px;
+        }
     }
 
-    .nav_burger.show {
-        display: flex;
-    }
-
-    /* Style des éléments du menu */
-    .nav_burger .nav-burger a {
-        text-align: center;     
-        list-style: none;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-family: "SpaceMono";
-        font-size: 44px;
-        font-weight: 400;
-        margin-top: 47px;
-        text-decoration: none;
-        color: var(--blanc);
-    }
-
-    .nav_burger ul {
-        text-align: center;
-        text-decoration: none;  
-        list-style: none;
-        margin-top: 75px;
-    }
-
-        /* Masquer le menu principal sur mobile */
+    /* Masquer le menu principal sur mobile */
     .site-navigation .nav-menu {
         display: none;
     }
+    
+    /* Empêcher le scroll */
+    .no-scroll {
+        overflow: hidden;
+    }
 }
-
