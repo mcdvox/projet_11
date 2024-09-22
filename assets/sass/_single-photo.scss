@@ -230,21 +230,23 @@
         border-bottom: none;
 
         h2 {
-            font-size: 46px;
+            font-size: 150px;
             font-weight: 420;
             font-style: italic;
             text-transform: uppercase;
             text-decoration: none;
-            width: 80%;
+            width: 50%;
+            margin: 0;
             color: var(--noir);
         }
 
         p {
-            font-size: 14px;
+            font-size: 28px;
             font-weight: 400;
             font-style: italic;
             text-transform: uppercase;
             text-decoration: none;
+            line-height: 10px;
         }
     }
 
@@ -301,16 +303,22 @@
     }
 
     .photo-contact {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        display: block;
         text-align: center;
         gap: 10px;
+
+        & > p {
+            font-size: 28px;
+        }
     }
 
     .contact {
-        display: block;
+        display: flex;
+        flex-direction: column;  /* Disposition en colonne */
+        align-items: center;     /* Centrer les éléments horizontalement */
+        justify-content: center; /* Centrer les éléments verticalement */
+        text-align: center;
+        padding-bottom: 50px;    /* Ajout d'espace en bas */
     }
 
     .related-photo-item {
@@ -327,9 +335,23 @@
         }
     }
 
+    .photo-contact {
+        display: flex;
+        flex-direction: column;  /* Assure que le texte et le bouton sont en colonne */
+        align-items: center;     /* Centrer les éléments dans la colonne */
+        margin-bottom: 20px;     /* Ajout d'espacement entre le texte et le bouton */
+        
+        & > p {
+            font-size: 28px;
+            margin-bottom: 20px;  /* Espace sous le texte "Cette photo vous intéresse ?" */
+        }
+    }
+
     .btn-contact {
-        width: 263px;
-        height: 50px;
+        width: 500px;
+        height: 100px;
+        font-size: 28px;
+        margin-top: 20px; /* Espace entre le texte et le bouton */
     }
 
     .fullscreen-icon {
@@ -347,11 +369,12 @@
         display: none;
     }
 
-    .photo-title {
+    .related-photo-item .overlay .photo-title {
         left: 300px !important;
         bottom: 40px !important;
     }
-    .photo-category {
+
+    .related-photo-item .overlay .photo-category {
         right: 300px !important;
         bottom: 40px !important;
     }

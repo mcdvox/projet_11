@@ -248,12 +248,6 @@ footer {
 }
 
 /* Styles pour les écrans inférieurs à 768px */
-@media screen and (max-width: 768px) {
-  .contact-modal-content {
-    background-color: var(--blanc);
-    margin: 35% auto;
-  }
-}
 /* Cacher le menu burger et le menu burger par défaut */
 .menu_burger, .nav_burger {
   display: none;
@@ -560,20 +554,22 @@ footer {
     border-bottom: none;
   }
   .description h2 {
-    font-size: 46px;
+    font-size: 150px;
     font-weight: 420;
     font-style: italic;
     text-transform: uppercase;
     text-decoration: none;
-    width: 80%;
+    width: 50%;
+    margin: 0;
     color: var(--noir);
   }
   .description p {
-    font-size: 14px;
+    font-size: 28px;
     font-weight: 400;
     font-style: italic;
     text-transform: uppercase;
     text-decoration: none;
+    line-height: 10px;
   }
   .others {
     width: 100%;
@@ -620,15 +616,20 @@ footer {
     margin: 0 auto;
   }
   .photo-contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: block;
     text-align: center;
     gap: 10px;
   }
+  .photo-contact > p {
+    font-size: 28px;
+  }
   .contact {
-    display: block;
+    display: flex;
+    flex-direction: column; /* Disposition en colonne */
+    align-items: center; /* Centrer les éléments horizontalement */
+    justify-content: center; /* Centrer les éléments verticalement */
+    text-align: center;
+    padding-bottom: 50px; /* Ajout d'espace en bas */
   }
   .related-photo-item {
     display: flex;
@@ -642,9 +643,21 @@ footer {
     display: block;
     margin: 0 auto;
   }
+  .photo-contact {
+    display: flex;
+    flex-direction: column; /* Assure que le texte et le bouton sont en colonne */
+    align-items: center; /* Centrer les éléments dans la colonne */
+    margin-bottom: 20px; /* Ajout d'espacement entre le texte et le bouton */
+  }
+  .photo-contact > p {
+    font-size: 28px;
+    margin-bottom: 20px; /* Espace sous le texte "Cette photo vous intéresse ?" */
+  }
   .btn-contact {
-    width: 263px;
-    height: 50px;
+    width: 500px;
+    height: 100px;
+    font-size: 28px;
+    margin-top: 20px; /* Espace entre le texte et le bouton */
   }
   .fullscreen-icon {
     display: none !important;
@@ -658,11 +671,11 @@ footer {
   .fullscreen-icon {
     display: none;
   }
-  .photo-title {
+  .related-photo-item .overlay .photo-title {
     left: 300px !important;
     bottom: 40px !important;
   }
-  .photo-category {
+  .related-photo-item .overlay .photo-category {
     right: 300px !important;
     bottom: 40px !important;
   }
@@ -678,6 +691,12 @@ footer {
   align-items: center;
   width: 100%;
   padding: 80px 0 20px;
+}
+.photo-selection .filter-item:nth-child(2) {
+  margin-left: 20px;
+}
+.photo-selection .filter-item:last-child {
+  margin-right: 0;
 }
 
 .photo-item {
@@ -802,21 +821,75 @@ select option {
 
 @media (max-width: 768px) {
   .photo-selection {
-    display: grid;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
   .filter-item {
     width: 100%;
+    max-width: 540px;
+    height: 84px;
     margin-right: 0;
     margin-bottom: 10px;
+    border-radius: 10px;
+  }
+  .filter-item:first-child {
+    order: 2;
+  }
+  .filter-item:nth-child(2) {
+    order: 1;
+    margin-left: unset !important;
   }
   .filter-item:last-child {
+    order: 3;
     margin-left: 0;
     padding-right: 0;
   }
+  .filter-item select {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+  }
+  .select2-container {
+    width: 100% !important;
+    max-width: 540px !important;
+    height: 84px !important;
+  }
+  .select2-container--default .select2-selection--single {
+    height: 84px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+  }
+  .select2-selection__rendered {
+    line-height: 84px;
+  }
+  .select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-width: 12px 9px 0 9px;
+    margin-left: -20px !important;
+    margin-top: 15px !important;
+  }
+  .select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-width: 12px 9px 0 9px;
+    border-color: var(--noir) transparent transparent transparent;
+  }
+  .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+    border-width: 0 9px 12px 9px;
+    border-color: transparent transparent var(--noir) transparent;
+    transform: scale(1);
+  }
   .select2-container--default .select2-selection--single,
   .select2-results__option--selectable {
-    font-size: 16px;
+    font-size: 36px;
+  }
+  .photos-grid > p {
+    font-size: 36px !important;
+  }
+  #photo-btn {
+    width: 500px;
+    height: 100px;
+    font-size: 28px;
   }
 }
 .hero h1 {
