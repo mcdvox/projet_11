@@ -483,6 +483,15 @@ footer {
   text-decoration: none;
   margin: 60px 0 50px 0;
 }
+.others p {
+  font-family: "SpaceMono", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin: 60px 0 50px 0;
+}
 .others .related-photos-container {
   display: flex;
   justify-content: space-between;
@@ -554,7 +563,7 @@ footer {
     border-bottom: none;
   }
   .description h2 {
-    font-size: 150px;
+    font-size: 120px;
     font-weight: 420;
     font-style: italic;
     text-transform: uppercase;
@@ -578,6 +587,7 @@ footer {
   .others h3 {
     display: flex;
     justify-content: center;
+    font-size: 36px;
   }
   .others .related-photos-container {
     display: flex;
@@ -585,6 +595,8 @@ footer {
     flex-direction: column;
   }
   .others .random-photo {
+    width: 790px;
+    height: 693px;
     padding-bottom: 25px;
     object-fit: cover;
   }
@@ -615,21 +627,32 @@ footer {
     display: block;
     margin: 0 auto;
   }
-  .photo-contact {
-    display: block;
+  .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    gap: 10px;
+    padding-bottom: 50px;
+  }
+  .photo-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    order: -1;
+    margin-bottom: 20pxt;
+    width: 100%;
   }
   .photo-contact > p {
     font-size: 28px;
+    margin-bottom: 20px;
   }
-  .contact {
-    display: flex;
-    flex-direction: column; /* Disposition en colonne */
-    align-items: center; /* Centrer les éléments horizontalement */
-    justify-content: center; /* Centrer les éléments verticalement */
-    text-align: center;
-    padding-bottom: 50px; /* Ajout d'espace en bas */
+  .photo-contact .btn-contact {
+    align-items: flex-start;
+    width: 500px;
+    height: 100px;
+    font-size: 28px;
+    margin-top: 0;
   }
   .related-photo-item {
     display: flex;
@@ -642,22 +665,6 @@ footer {
     height: auto;
     display: block;
     margin: 0 auto;
-  }
-  .photo-contact {
-    display: flex;
-    flex-direction: column; /* Assure que le texte et le bouton sont en colonne */
-    align-items: center; /* Centrer les éléments dans la colonne */
-    margin-bottom: 20px; /* Ajout d'espacement entre le texte et le bouton */
-  }
-  .photo-contact > p {
-    font-size: 28px;
-    margin-bottom: 20px; /* Espace sous le texte "Cette photo vous intéresse ?" */
-  }
-  .btn-contact {
-    width: 500px;
-    height: 100px;
-    font-size: 28px;
-    margin-top: 20px; /* Espace entre le texte et le bouton */
   }
   .fullscreen-icon {
     display: none !important;
@@ -672,11 +679,11 @@ footer {
     display: none;
   }
   .related-photo-item .overlay .photo-title {
-    left: 300px !important;
+    left: 200px !important;
     bottom: 40px !important;
   }
   .related-photo-item .overlay .photo-category {
-    right: 300px !important;
+    right: 200px !important;
     bottom: 40px !important;
   }
   .photo-item {
