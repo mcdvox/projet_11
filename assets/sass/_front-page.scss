@@ -1,3 +1,5 @@
+// front-page
+
 // Section Filtres
 // Conteneur des filtres
 .photo-selection {
@@ -10,11 +12,11 @@
     // Styles communs pour les items de filtre
     .filter-item {
         &:nth-child(2) {
-            margin-left: 20px; // Espace entre le premier et le second filtre
+            margin-left: 20px;
         }
         
         &:last-child {
-            margin-right: 0; // Ajustement du dernier filtre
+            margin-right: 0;
         }
     }
 }
@@ -154,7 +156,7 @@ select option {
     &:hover {
         color: var(--noir);
         font-weight: 700;
-        background-color: var(--gris-medium);
+        background-color: var(--gris-fonce);
         transform: scale(1.1);
     }
 }

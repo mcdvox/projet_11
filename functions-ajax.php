@@ -1,3 +1,4 @@
+<!-- Functions Ajax -->
 <?php
 
 // Action pour les utilisateurs connectés

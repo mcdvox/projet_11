@@ -1,3 +1,4 @@
+<!-- Template Lightbox -->
 <div class="lightbox" style="display: none;">
     
     <!-- Fermeture de la lightbox -->

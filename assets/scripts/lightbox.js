@@ -1,3 +1,4 @@
+// Script Lightbox
 // Fonction pour initialiser les événements sur les déclencheurs de la lightbox
 function initLightboxTriggers() {
     console.log('Initialisation des événements sur les déclencheurs de la lightbox');

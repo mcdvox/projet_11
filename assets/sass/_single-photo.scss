@@ -1,3 +1,5 @@
+// single-photo
+
 // Conteneur de l'article
 .infos {
     display: flex;
@@ -70,11 +72,26 @@
 }
 
 .btn-contact {
-    font-family: "SpaceMono", sans-serif;
-    font-size: 12px;
     width: 272px;
     height: 50px;
+    padding: 8px 15px;
+    margin: 50px 0;
     border: none;
+    font-family: 'Space Mono';
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--noir);
+    background-color: var(--gris-medium);
+    border-radius: 2px;
+    box-shadow: 0px 2px 1px 0px var(--gris-light, 0.02);
+    transition: transform 0.35s ease, background-color 0.35s ease;
+
+    &:hover {
+        color: var(--noir);
+        font-weight: 700;
+        background-color: var(--gris-fonce);
+        transform: scale(1.1);
+    }
 }
 
 // Flèches droite et gauche
@@ -340,9 +357,9 @@
         .btn-contact {
             align-items: flex-start;
             width: 500px;
-        height: 100px;
-        font-size: 28px;
-        margin-top: 0;
+            height: 100px;
+            font-size: 28px;
+            margin-top: 0;
         }
     }
 
