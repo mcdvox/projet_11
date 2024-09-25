@@ -1,12 +1,6 @@
 <!-- Functions Ajax -->
 <?php
 
-// Action pour les utilisateurs connectés
-add_action('wp_ajax_load_more_photos', 'load_more_photos');
-
-// Action pour les utilisateurs non connectés
-add_action('wp_ajax_nopriv_load_more_photos', 'load_more_photos');
-
 function load_more_photos() {
     
     // Vérifie si le numéro de page est défini dans la requête AJAX
@@ -115,4 +109,9 @@ function load_more_photos() {
     // Terminer la requête AJAX proprement
     wp_die();
 }
-?>
+
+// Action pour les utilisateurs connectés
+add_action('wp_ajax_load_more_photos', 'load_more_photos');
+
+// Action pour les utilisateurs non connectés
+add_action('wp_ajax_nopriv_load_more_photos', 'load_more_photos');

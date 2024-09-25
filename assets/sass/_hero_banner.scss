@@ -25,5 +25,6 @@
 
 .full-width {
     width: 1447px;
-    height: auto;
+    max-height: 966px;
+    object-fit: cover;
 }

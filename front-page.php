@@ -18,25 +18,30 @@
 
             // Fonction pour générer un select avec des termes de taxonomie
             function generate_taxonomy_select($taxonomy, $label) {
-
-                // `get_terms()` récupère les termes d'une taxonomie donnée (catégorie et format)
+                // Récupérer les termes de la taxonomie spécifiée
                 $terms = get_terms($taxonomy);
-
-                // Création de l'élément select pour la taxonomie
-                echo '<div class="filter-item">';
-                echo '<select id="photo-' . esc_attr($taxonomy) . '-select">';
-
-                // Option par défaut, non sélectionnable, servant de placeholder
-                echo '<option value="" selected enabled>' . esc_html($label) . '</option>';
-
-                // Boucle sur les termes pour générer chaque option
-                foreach ($terms as $term) {
-                    echo '<option value="' . esc_attr($term->slug) . '">' . esc_html($term->name) . '</option>';
+            
+                // Vérifiez si la récupération des termes est réussie
+                if (!is_wp_error($terms) && !empty($terms)) {
+                    echo '<div class="filter-item">';
+                    echo '<select id="photo-' . esc_attr($taxonomy) . '-select">';
+            
+                    // Option par défaut
+                    echo '<option value="" selected enabled>' . esc_html($label) . '</option>';
+            
+                    // Boucle sur les termes pour générer chaque option
+                    foreach ($terms as $term) {
+                        echo '<option value="' . esc_attr($term->slug) . '">' . esc_html($term->name) . '</option>';
+                    }
+            
+                    echo '</select>';
+                    echo '</div>';
+                } else {
+                    // Afficher un message d'erreur s'il n'y a pas de termes
+                    echo '<p>' . esc_html__('Aucun terme trouvé pour la taxonomie ', 'motaphoto') . esc_html($taxonomy) . '</p>';
                 }
-
-                echo '</select>';
-                echo '</div>';
             }
+            
 
             // Appel des filtres pour les catégories et formats
             // Appel de la fonction pour générer un select pour la taxonomie "categorie"
